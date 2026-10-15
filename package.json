@@ -1,0 +1,17 @@
+{
+  "name": "vardagen",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Kalender, kvitton och listor för familjen – och en privat del bara för dig.",
+  "scripts": {
+    "start": "node tests/fake-server.js",
+    "test:server": "node tests/fake-server.js",
+    "test:e2e": "node tests/e2e.js",
+    "test:demo": "node tests/demo-test.js",
+    "test:db": "node tests/db-rules.test.mjs"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.2.17",
+    "playwright": "1.56.1"
+  }
+}
