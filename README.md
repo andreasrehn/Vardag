@@ -32,7 +32,12 @@ och, senare, **Expo** (om appen ska till App Store). Räkna med cirka 20 minuter
 5. Öppna **Authentication → URL Configuration**:
    - **Site URL**: din app-adress från steg 2 nedan, t.ex. `https://dittnamn.github.io/vardagen/`
    - **Redirect URLs**: lägg till samma adress.
-6. Öppna **Project Settings → API** (eller *Data API*). Kopiera **Project URL** och nyckeln **anon public**.
+6. Hämta adressen och nyckeln:
+   - **Adressen**: **Project Settings → Data API** → *Project URL*, t.ex. `https://abcdefgh.supabase.co`
+     (utan `/rest/v1/` på slutet).
+   - **Nyckeln**: **Project Settings → API Keys** → fliken **Legacy API Keys** → raden **anon public** → **Copy**.
+     Den börjar med `eyJ`. Finns inte fliken kan du i stället kopiera **Publishable key** (börjar med `sb_publishable_`).
+
    Skriv in dem i filen [`config.js`](config.js):
 
    ```js
@@ -44,7 +49,7 @@ och, senare, **Expo** (om appen ska till App Store). Räkna med cirka 20 minuter
 
    Anon-nyckeln är gjord för att synas i appen. Allt skyddas av reglerna i `schema.sql`:
    privata data kan bara läsas av ägaren, och delade data bara av medlemmarna i just det utrymmet.
-   Använd **aldrig** nyckeln som heter *service_role* i appen.
+   Använd **aldrig** nyckeln som heter *service_role* eller *Secret key* i appen.
 
 ### 2. GitHub Pages – webbadressen
 
